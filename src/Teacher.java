@@ -43,14 +43,11 @@ public class Teacher extends People{
     }
 
     //methods
-    public void help (String Profil){
-        System.out.println("You are welcome to work!");
-    }
 
     @Override
     public void speak(String text1) {
         super.speak(text1);
-        System.out.println("\tWelcome to our school!)");
+        System.out.println("\tHello, student. Welcome to our school!)");
     }
 
 }

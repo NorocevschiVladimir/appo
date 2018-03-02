@@ -47,7 +47,7 @@ public class People {
     //methods
     public void speak(String text1){
 
-        System.out.println("Hey Guys! I am  a people in this world.");
+        System.out.println("Hey Guys! I am  a student.");
 
     }
 
