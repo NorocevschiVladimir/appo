@@ -4,42 +4,23 @@ import java.util.Optional;
 import java.util.Random;
 
 public class School {
-    private HashMap<String, ArrayList<Teacher>> hm = new  HashMap<String, ArrayList<Teacher>>();
+    private HashMap<String, ArrayList<School>> hm = new  HashMap<String, ArrayList<School>>();
 
-    public void addTeacher(String pain, Teacher teacher){
+    public void addDoctor(String pain, School school){
         if(hm.get (pain) == null){
-            ArrayList<Teacher> newList = new ArrayList<Teacher>();
-            newList.add(teacher);
+            ArrayList<School> newList = new ArrayList<School>();
+            newList.add(school);
             hm.put(pain, newList);
         } else {
-            hm.get(pain).add(teacher);
+            hm.get(pain).add(school);
         }
     }
 
-    public Teacher getTeacherForIllness(String illness) {
-        ArrayList<Teacher> teachers = hm.get(illness);
-        if (teachers == null) {
-            return null;
-        } else{
-            Random rnd = new Random(System.currentTimeMillis());
-            int index = Math.abs(rnd.nextInt() % teachers.size());
-            return teachers.get(index);
-        }
-    }
 
     @Override
     public String toString() {
-        String res = "";
-
-        for (String illness: hm.keySet()) {
-            ArrayList<Teacher> teachers = hm.get(illness);
-            res += illness + '\n';
-            for (Teacher d : teachers) {
-                res += "\t" + d;
-            }
-            res += '\n';
-        }
-
-        return res;
+        return "School{" +
+                "hm=" + hm +
+                '}';
     }
 }
